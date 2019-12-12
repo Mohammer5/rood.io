@@ -1,0 +1,55 @@
+$fa-font-path: '~font-awesome-sass/assets/fonts/font-awesome/';
+
+@import "~font-awesome-sass/assets/stylesheets/font-awesome";
+@import "~normalize-scss/sass/normalize";
+@import "./modules/styleguide/font-settings";
+
+@include normalize();
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Alegreya Sans', sans-serif;
+  margin: 0;
+  font-size: $font-size-sm;
+  line-height: $line-height-content;
+}
+
+code {
+  font-size: $font-size-xs;
+  font-family: 'Courier New',
+               'Menlo',
+               'Ubuntu Mono',
+               'Terminus Font',
+               'GNU Unifont',
+               sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: $line-height-headline;
+}
+
+h1, ul, ol, p, code {
+  margin-top: 0;
+}
+
+code {
+  display: block;
+}
+
+#app-container {
+  width: 100%;
+  height: 100%;
+}

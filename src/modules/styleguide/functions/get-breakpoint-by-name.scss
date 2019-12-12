@@ -1,0 +1,16 @@
+@import "../breakpoints";
+
+@function get-breakpoint-by-name($name) {
+  @if $name == "xs" {
+    @return $xs;
+  }
+  @else if $name == "sm" {
+    @return $sm;
+  }
+  @else if $name == "md" {
+    @return $md;
+  }
+  @else if $name == "lg" {
+    @return $lg;
+  }
+}

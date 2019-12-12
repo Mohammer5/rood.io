@@ -1,0 +1,13 @@
+@import "~font-awesome-sass/assets/stylesheets/font-awesome/variables";
+@import "../styleguide/mixins/icon";
+@import "./mixins";
+
+.button {
+  @include control()
+  @include controlButton()
+  @include icon($fa-var-play, $controls-height, $controls-height);
+}
+
+.playing {
+  @include icon($fa-var-pause, $controls-height, $controls-height);
+}

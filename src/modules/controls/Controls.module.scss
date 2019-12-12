@@ -1,0 +1,15 @@
+@import "../styleguide/colors";
+@import "./variables";
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: $controls-height;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  background: $alabaster;
+  box-shadow: 0 0 6px rgba(0,0,0,0.4);
+}

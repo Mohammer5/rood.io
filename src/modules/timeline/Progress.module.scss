@@ -1,0 +1,19 @@
+@import "../styleguide/colors";
+
+.progress {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.current {
+  height: 100%;
+  background: $algea-green;
+  transition: width 0.25s ease-out;
+}
+
+.isSeeking {
+  transition-duration: 0s;
+}
