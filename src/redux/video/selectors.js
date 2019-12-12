@@ -9,3 +9,5 @@ export const getVideoSeekTo = state => getVideo(state).seekTo
 export const getVideoFullscreen = state => getVideo(state).fullScreen
 export const getVideoPlaying = state => getVideo(state).playing
 export const getVideoLoaded = state => getVideo(state).loaded
+export const getVideoTimePreview = state => getVideo(state).timePreview
+export const getVideoShowTimePreview = state => getVideo(state).showTimePreview

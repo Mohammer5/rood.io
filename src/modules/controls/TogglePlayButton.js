@@ -1,5 +1,12 @@
+import { useDispatch, useSelector } from 'react-redux';
 import React from 'react'
 import cx from 'classnames'
+
+import {
+  getVideoPlaying,
+  pause,
+  play,
+} from '../../redux';
 import styles from './TogglePlayButton.module.scss'
 
 const createClassName = playing => cx(
@@ -8,5 +15,11 @@ const createClassName = playing => cx(
 )
 
 export const TogglePlayButton = () => {
-  return <span className={createClassName(false)} />
+  const dispatch = useDispatch()
+  const isPlaying = useSelector(getVideoPlaying)
+
+  return <span
+    className={createClassName(isPlaying)}
+    onClick={() => dispatch(isPlaying ? pause() : play())}
+  />
 }

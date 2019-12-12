@@ -2,6 +2,7 @@ export const TOGGLE_FULL_SCREEN = 'TOGGLE_FULL_SCREEN';
 export const TOGGLE_MUTE = 'TOGGLE_MUTE'
 export const PLAY = 'PLAY'
 export const PAUSE = 'PAUSE'
+export const STOP = 'STOP'
 export const SEEK = 'SEEK'
 export const SEEK_END = 'SEEK_END'
 export const SET_DURATION = 'SET_DURATION'
@@ -9,11 +10,13 @@ export const SET_VIDEO_URL = 'SET_VIDEO_URL'
 export const SET_VIDEO_POSTER_URL = 'SET_VIDEO_POSTER_URL'
 export const SET_VIDEO_LOADED = 'SET_VIDEO_LOADED'
 export const UPDATE_CURRENT_TIME = 'UPDATE_CURRENT_TIME'
+export const TIME_PREVIEW = 'TIME_PREVIEW'
+export const HIDE_TIME_PREVIEW = 'HIDE_TIME_PREVIEW'
 
 /**
  * @returns {Object}
  */
-export const TOGGLE_FULL_SCREEN = () => ({
+export const toggleFullScreen = () => ({
   type: TOGGLE_FULL_SCREEN,
 })
 
@@ -36,6 +39,13 @@ export const play = () => ({
  */
 export const pause = () => ({
   type: PAUSE,
+})
+
+/**
+ * @returns {Object}
+ */
+export const stop = () => ({
+  type: STOP,
 })
 
 /**
@@ -85,7 +95,7 @@ export const setVideoPosterUrl = posterUrl => ({
  * @param {boolean} loaded
  * @returns {Object}
  */
-export const setVideoPosterUrl = loaded => ({
+export const setVideoLoaded = loaded => ({
   type: SET_VIDEO_LOADED,
   payload: { loaded },
 })
@@ -97,4 +107,20 @@ export const setVideoPosterUrl = loaded => ({
 export const updateCurrentTime = currentTime => ({
   type: UPDATE_CURRENT_TIME,
   payload: { currentTime },
+})
+
+/**
+ * @param {number} time
+ * @returns {Object}
+ */
+export const timePreview = time => ({
+  type: TIME_PREVIEW,
+  payload: { time },
+})
+
+/**
+ * @returns {Object}
+ */
+export const hideTimePreview = () => ({
+  type: HIDE_TIME_PREVIEW,
 })

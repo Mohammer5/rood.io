@@ -1,6 +1,9 @@
 import React from 'react'
 
 import { Controls } from '../modules/controls/Controls';
+import {
+  MarkerContentSection,
+} from '../modules/markerContentSection/MarkerContentSection';
 import { Player } from '../modules/video/Player';
 
 export const Presentation = () => {
@@ -14,6 +17,7 @@ export const Presentation = () => {
       />
 
       <Controls />
+      <MarkerContentSection />
     </div>
   )
 }

@@ -1,6 +1,5 @@
 import '../../types'
 
-const isFirstMarker = index => index === 0
 const hasTimePastMarkerTime = (timestamp, time) => time >= timestamp
 
 /**
@@ -10,9 +9,10 @@ const hasTimePastMarkerTime = (timestamp, time) => time >= timestamp
  */
 export const getActiveMarkerIndexForTime = (markers, time) =>
   markers.reduceRight(
-    (markerIndex, { timestamp }, iteration) =>
-      markerIndex === 0 && hasTimePastMarkerTime(timestamp)
-        ? markers.indexOf(markers.length - iteration)
-        : markerIndex,
+    (markerIndex, { timestamp }, currentMarkerIndex) => {
+      return markerIndex === 0 && hasTimePastMarkerTime(timestamp, time)
+        ? currentMarkerIndex
+        : markerIndex
+    },
     0,
   )

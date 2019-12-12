@@ -2,6 +2,7 @@ import '../../types'
 import {
   getActiveMarkerIndexForTime,
 } from '../../modules/marker/getActiveMarkerIndexForTime';
+import { GLOBAL_UPDATE } from '../app/actions'
 import {
   UPDATE_CURRENT_TIME,
   SEEK,
@@ -56,12 +57,30 @@ export const marker = (
     return { ...state, markers: payload }
   }
 
-  if (type in [UPDATE_CURRENT_TIME, SEEK]) {
-    const newActiveMarker = getActiveMarkerIndexForTime(state.markers, payload)
+  if (type === UPDATE_CURRENT_TIME) {
+    const newActiveMarker = getActiveMarkerIndexForTime(
+      state.markers,
+      payload.currentTime,
+    )
 
     if (newActiveMarker !== state.activeMarker) {
       return { ...state, activeMarker: newActiveMarker }
     }
+  }
+
+  if (type === SEEK) {
+    const newActiveMarker = getActiveMarkerIndexForTime(
+      state.markers,
+      payload.time,
+    )
+
+    if (newActiveMarker !== state.activeMarker) {
+      return { ...state, activeMarker: newActiveMarker }
+    }
+  }
+
+  if (type === GLOBAL_UPDATE) {
+    return { ...state, ...payload.marker }
   }
 
   return state

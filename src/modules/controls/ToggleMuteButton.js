@@ -1,5 +1,11 @@
+import { useDispatch, useSelector } from 'react-redux';
 import React from 'react'
 import cx from 'classnames'
+
+import {
+  getVideoMuted,
+  toggleMute,
+} from '../../redux'
 import styles from './ToggleMuteButton.module.scss'
 
 const createClassName = invert => cx(
@@ -8,5 +14,11 @@ const createClassName = invert => cx(
 )
 
 export const ToggleMuteButton = () => {
-  return <span className={createClassName(false)} />
+  const dispatch = useDispatch()
+  const isMuted = useSelector(getVideoMuted)
+  
+  return <span
+    className={createClassName(isMuted)}
+    onClick={() => dispatch(toggleMute())}
+  />
 }
