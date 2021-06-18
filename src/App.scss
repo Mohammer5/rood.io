@@ -2,7 +2,7 @@ $fa-font-path: '~font-awesome-sass/assets/fonts/font-awesome/';
 
 @import "~font-awesome-sass/assets/stylesheets/font-awesome";
 @import "~normalize-scss/sass/normalize";
-@import "./modules/styleguide/font-settings";
+@import "./styleguide/font-settings";
 
 @include normalize();
 

@@ -1,0 +1,18 @@
+.timePreview {
+  height: 40px;
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  transform: translateX(-50%);
+  background: black;
+  color: white;
+  padding: 0 5px;
+  display: flex;
+  justify-content: center;
+  vertical-align: center;
+  z-index: 3;
+}
+
+.timePreview span {
+  align-self: center;
+}

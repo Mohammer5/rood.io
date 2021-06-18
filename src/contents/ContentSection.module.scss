@@ -1,0 +1,33 @@
+@import "../styleguide/mixins/bp";
+@import "../styleguide/colors";
+@import "../controls/variables";
+@import "./variables";
+
+.container {
+  width: 100%;
+  height: $header-height-mobile;
+  position: absolute;
+  background: $alabaster;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  transition: width 0.075s ease-in-out,
+              height 0.075s ease-in-out;
+  box-shadow: 0 0 6px rgba(0,0,0,0.4);
+
+  @include bp('md') {
+    height: $header-height-desktop;
+  }
+}
+
+.showContents {
+  height: calc(100% - #{$controls-height});
+  box-shadow: none;
+}
+
+.wrapper {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}

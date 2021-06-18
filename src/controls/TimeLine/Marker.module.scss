@@ -1,0 +1,9 @@
+@import "../../styleguide/colors";
+
+.marker {
+  width: 5px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: $manhattan;
+}

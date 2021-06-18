@@ -1,0 +1,4 @@
+export const SET_CONTENTS = 'SET_CONTENTS'
+export const SHOW_CONTENT = 'SHOW_CONTENT'
+export const SET_ACTIVE_CONTENT = 'SET_ACTIVE_CONTENT'
+export const HIDE_CONTENT = 'HIDE_CONTENT'

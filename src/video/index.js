@@ -1,0 +1,5 @@
+export * from './actions'
+export * from './actionTypes'
+export { Player } from './Player'
+export { reducer as videoReducer } from './reducer'
+export * from './selectors'

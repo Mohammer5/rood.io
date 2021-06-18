@@ -1,0 +1,9 @@
+@import "../functions/get-breakpoint-by-name";
+
+@mixin bp($name, $direction: "min") {
+  $bpSizeValue: get-breakpoint-by-name($name);
+
+  @media (#{$direction}-width: #{$bpSizeValue}) {
+    @content;
+  }
+}

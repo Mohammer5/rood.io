@@ -1,0 +1,91 @@
+@import "../styleguide/mixins/bp";
+@import "../styleguide/colors";
+@import "../styleguide/font-settings";
+@import "./variables";
+
+.content {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+}
+
+.active {
+  transform: translateY(0);
+
+  ~ .content {
+    transform: translateY(100%);
+  }
+}
+
+.contentWrapper {
+  height: 100%;
+  display: none;
+
+  .active & {
+    display: block;
+  }
+}
+
+.title {
+  margin: 0;
+  height: $header-height-mobile;
+  padding: 12px 60px 10px 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: $font-size-lg;
+  box-shadow: 0 0 6px rgba(0,0,0,0.4);
+
+  @include bp('md') {
+    height: $header-height-desktop;
+    width: 100%;
+    padding: 22px 80px 20px 10px;
+  }
+}
+
+.presentationTitle {
+  display: block;
+  font-size: $font-size-sm;
+  line-height: 1;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contentTitle {
+  display: block;
+  line-height: 26px;
+  font-size: $font-size-lg;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contentBody {
+  height: calc(100% - #{$header-height-mobile + 1px});
+  padding: 10px;
+  border-top: 1px solid #{$alto};
+  overflow: hidden;
+  overflow-y: scroll;
+
+  @include bp('sm') {
+    height: calc(100% - #{$header-height-desktop + 1px});
+  }
+
+  h1, ul, ol, p, code {
+    margin-bottom: $font-size-sm * $line-height-content;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  pre {
+    overflow-x: scroll;
+    margin: 0;
+  }
+}

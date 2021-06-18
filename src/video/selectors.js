@@ -1,0 +1,13 @@
+export const getVideo = state => state.video
+export const getVideoUrl = state => getVideo(state).url
+export const getVideoPosterUrl = state => getVideo(state).posterUrl
+export const getVideoCurrentTime = state => getVideo(state).currentTime
+export const getVideoDuration = state => getVideo(state).duration
+export const getVideoMuted = state => getVideo(state).muted
+export const getVideoSeeking = state => getVideo(state).seeking
+export const getVideoSeekTo = state => getVideo(state).seekTo
+export const getVideoFullscreen = state => getVideo(state).fullScreen
+export const getVideoPlaying = state => getVideo(state).playing
+export const getVideoLoaded = state => getVideo(state).loaded
+export const getVideoTimePreview = state => getVideo(state).timePreview
+export const getVideoShowTimePreview = state => getVideo(state).showTimePreview

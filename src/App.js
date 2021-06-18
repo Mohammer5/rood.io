@@ -1,22 +1,16 @@
-import "./App.scss"
-
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import { Provider } from 'react-redux';
+import './App.scss';
 import React from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Presentation } from './presentation';
 
-import { Presentation } from './views/Presentation';
-import { configureStore } from './redux/configureStore';
-
-const store = configureStore()
-
-export default () => {
+function App() {
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={Presentation} />
-        </Switch>
-      </BrowserRouter>
-    </Provider>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Presentation} />
+      </Switch>
+    </BrowserRouter>
   )
 }
+
+export default App

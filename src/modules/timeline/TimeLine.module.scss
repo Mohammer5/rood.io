@@ -1,9 +1,0 @@
-@import "../controls/mixins";
-@import "../styleguide/colors";
-
-.timeline {
-  @include control()
-  flex: 1;
-  position: relative;
-  background: $white;
-}
