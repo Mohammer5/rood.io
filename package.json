@@ -53,6 +53,6 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "5"
+    "node-sass": "7"
   }
 }
